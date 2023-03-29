@@ -1,0 +1,3 @@
+Notes on creating a pendulum:
+First type - simple gravity pendulum:
+    Idealised - no drag, only weight gravity and tension in the pendulum string

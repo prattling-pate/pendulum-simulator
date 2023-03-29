@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendulum Simulator</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pendulum Simulator</title>
+		<link rel="stylesheet" href="./style.css"></link>
+		<script src="./scripts/canvas_handler.js"></script>
+		<script src="./scripts/simulation_drawer.js"></script>
+		<script src="./scripts/vectors/vector2.js"></script>
+		<script src="./scripts/vectors/position.js"></script>
+		<script src="./scripts/vectors/velocity.js"></script>
+		<script src="./scripts/vectors/acceleration.js"></script>
+		<script src="./scripts/objects/my_object.js"></script>
+		<script src="./scripts/objects/circle_object.js"></script>
+		<script src="./scripts/objects/rectangle_object.js"></script>
+		<script src="./scripts/pendulum_sims/pendulum_simulator.js"></script>
+		<script src="./scripts/pendulum_sims/simple_pendulum.js"></script>
+	</head>
+	<body>
+		<div class="canvas-class">
+        	<canvas id="main" width="640" height="480" ></canvas>
+			<label for="sim-type">
+				Type of pendulum to simulate:
+			</label>
+			<select id="sim-type">
+				<option value="simple-gravity-pendulum">Simple Gravity Pendulum (Differential Equations)</option>
+				<option value="simple-harmonic-pendulum">Simple Harmonic Motion (Differential Equations)</option>
+			</select>
+			<br><br>
+			<label for="initial-angle">
+			Initial Angle: 
+			</label>
+			<input id="initial-angle" type="number" value="0.1"> rad
+			<br><br>
+			<label for="gravity"></label>
+			Gravitational Field Strength: 
+			<input id="gravity" type="number" value="9.81"> ms<sup>-2</sup>
+			<br><br>
+			<label for="length"></label>
+			Length of Pendulum String: 
+			<input id="length" type="number" value="1.0"> m
+			<br><br>
+			<label for="air-density">
+			Density of Air: 
+			</label>
+			<input id="air-density" type="number" value="1.225"> kgm<sup>-3</sup>
+			<br><br>
+			<button id="refresh-constants">Refresh Constants</button>
+		</div>
+		<script src="./script.js"></script>
+	</body>
 </html>

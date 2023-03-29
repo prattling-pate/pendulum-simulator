@@ -1,0 +1,14 @@
+canvas {
+    border: 1px solid black;
+}
+
+input {
+    width: 50px;
+}
+
+.canvas-class {
+    border: 1px solid black;
+    margin: auto;
+    width: 640px;
+    padding: 10px;
+}
