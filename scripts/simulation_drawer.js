@@ -11,7 +11,7 @@ class SimulationDrawer extends CanvasHandler {
     _drawString(sim) {
         const object0 = sim.objectList[0];
         const object1 = sim.objectList[1];
-        this.drawLine(object0.position.x, object0.position.y, object1.position.x, object1.position.y, "black", 1);
+        this.drawLine(object0.position.x, object0.position.y + 0.5 * object1.height, object1.position.x, object1.position.y, "black", 1);
     }
 
     _drawObject(object) {
