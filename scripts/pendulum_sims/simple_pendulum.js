@@ -1,5 +1,5 @@
 class SimplePendulum extends PendulumSimulation {
-	constructor(initialAngle = 1, gravitationalFieldStrength = 9.81, airDensity = 0, lengthOfPendulum = 100, width=640, height=480, changeInTime = 0.01) {
+	constructor(initialAngle = 0.1, gravitationalFieldStrength = 9.81, airDensity = 0, lengthOfPendulum = 100, width=640, height=480, changeInTime = 0.01) {
 		super(initialAngle, gravitationalFieldStrength, airDensity, lengthOfPendulum, changeInTime);
 		this._constants = { gravitationalFieldStrength: gravitationalFieldStrength, airDensity: airDensity, lengthOfPendulum: lengthOfPendulum, changeInTime: changeInTime };
 		this.angle = initialAngle;
@@ -9,6 +9,8 @@ class SimplePendulum extends PendulumSimulation {
 	}
 
     refresh(width, height) {
+        this._angularAcceleration = 0;
+        this._angularVelocity = 0;
 		this.objectList = this._getObjectList(width, height);
 		this.constants = { gravitationalFieldStrength: 9.81, airDensity: 0, lengthOfPendulum: 270 };
 		this.angle = 1;
