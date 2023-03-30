@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pendulum Simulator</title>
 		<link rel="stylesheet" href="./style.css"></link>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+		crossorigin="anonymous"></script>
 		<script src="./scripts/canvas_handler.js"></script>
 		<script src="./scripts/simulation_drawer.js"></script>
 		<script src="./scripts/vectors/vector2.js"></script>
@@ -17,6 +20,8 @@
 		<script src="./scripts/objects/rectangle_object.js"></script>
 		<script src="./scripts/pendulum_sims/pendulum_simulator.js"></script>
 		<script src="./scripts/pendulum_sims/simple_pendulum.js"></script>
+		<script src="./scripts/pendulum_sims/small_angle_pendulum.js"></script>
+		<script src="./scripts/pendulum_sims/double_simple_pendulum.js"></script>
 	</head>
 	<body>
 		<div class="canvas-class">
@@ -26,7 +31,8 @@
 			</label>
 			<select id="sim-type">
 				<option value="simple-gravity-pendulum">Simple Gravity Pendulum (Differential Equations)</option>
-				<option value="simple-harmonic-pendulum">Simple Harmonic Motion (Differential Equations)</option>
+				<option value="small-angle-approximation-pendulum">Small Angle Approximation Pendulum (Differential Equations)</option>
+				<option value="double-simple-pendulum">Naive Double Simple Gravity Pendulum (Differential Equations)</option>
 			</select>
 			<br><br>
 			<label for="initial-angle">
@@ -34,6 +40,13 @@
 			</label>
 			<input id="initial-angle" type="number" value="0.1"> rad
 			<br><br>
+			<div class="second-angle">
+				<label for="second-initial-angle">
+				Second Initial Angle: 
+				</label>
+				<input id="second-initial-angle" type="number" value="0.1"> rad
+				<br><br>
+			</div>
 			<label for="gravity"></label>
 			Gravitational Field Strength: 
 			<input id="gravity" type="number" value="9.81"> ms<sup>-2</sup>
@@ -50,10 +63,16 @@
 			<label for="delta-time">
 				Change in time: 
 			</label>
-				<input id="delta-time" type="number" value="1"> kgm<sup>-3</sup>
+				<input id="delta-time" type="number" value="1"> s<sup>-1</sup>
+			<br><br>
+			<label for="time-scale">
+				Time Scale: 
+			</label>
+			<input id="time-scale" type="number" value="1"> x
 			<br><br>
 			<button id="refresh-constants">Refresh Constants</button>
 		</div>
-		<script src="./script.js"></script>
+		<script src="./scripts/script.js"></script>
+		<script src="./scripts/jquery_handling.js"></script>
 	</body>
 </html>
