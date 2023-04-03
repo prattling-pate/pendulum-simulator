@@ -4,8 +4,8 @@ class Acceleration extends Vector2 {
 	}
 
 	// uses Newton's generalised second law F=ma to find new acceleration of object given its resultant force and mass (a = F/m)
-	update(object) {
-		this.x = object.resolveVectors().getX() / object.getMass();
-		this.y = object.resolveVectors().getY() / object.getMass();
+	update(force, mass) {
+		this.x = force.getX() / mass;
+		this.y = force.getY() / mass;
 	}
 }

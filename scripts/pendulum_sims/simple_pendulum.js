@@ -5,11 +5,6 @@ class SimplePendulum extends PendulumSimulation {
         this._angularVelocity = 0;
 	}
 
-    setConstants(initialAngle, gravitationalFieldStrength, airDensity, lengthOfPendulum, changeInTime) {
-        this._constants = { gravitationalFieldStrength: gravitationalFieldStrength, airDensity: airDensity, lengthOfPendulum: lengthOfPendulum, changeInTime: changeInTime };
-        this.angle = initialAngle;
-    }
-
 	_getObjectList(width, height) {
         const c = this._constants;
         const rectPos = new Position(width/2, height/3);

@@ -13,12 +13,12 @@ function init() {
 		const deltaTime = 0.01 * getFloatValueFromPage("delta-time");
         const timeScale = getFloatValueFromPage("time-scale");
 		currentSimulation = changeSimulation();
-		currentSimulation.refresh(simulationCanvasHandler.width, simulationCanvasHandler.height);
 		if (currentSimulation instanceof DoubleSimplePendulum) {
 			currentSimulation.setConstants(initialAngle, secondAngle, gravity, density, length, deltaTime);
 		} else {
 			currentSimulation.setConstants(initialAngle, gravity, density, length, deltaTime);
 		}
+		currentSimulation.refresh(simulationCanvasHandler.width, simulationCanvasHandler.height);
         clearInterval(clock);
         clock = window.setInterval(updateFrame, 1/timeScale*fps, simulationCanvasHandler);
 	});
@@ -34,6 +34,8 @@ function changeSimulation() {
 			return new SmallAnglePendulum();
 		case "double-simple-pendulum":
 			return new DoubleSimplePendulum();
+		case "real-time-pendulum":
+			return new RealTimePendulum();
 	}
 }
 
