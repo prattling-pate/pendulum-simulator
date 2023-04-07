@@ -24,7 +24,7 @@ class MyObject {
 		const resultantForce = new Vector2((-mg*angleSin+Fd)*angleCos, 0);
 		this.acceleration.update(resultantForce, this.mass);
 		this.velocity.update(this.acceleration, timeStep);
-		this.position.update(this.velocity, timeStep);
+		this.position.update(this.velocity.multiply(100), timeStep);
 		this.position.y = Math.sqrt(lengthOfPendulum**2 - (this.position.x - otherObject.position.x)**2) + otherObject.position.y;
 		}
 
